@@ -1,0 +1,75 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+.repair-holder {
+    margin-top: 7.5rem;
+}
+
+.repair-holder h1 {
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+
+.repair-holder h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.repair-holder h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.75);
+}
+
+.repair-form input {
+    width: 98%;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    color: #1c1a18;
+    border: 1px solid rgba(28, 26, 24, 0.5);
+}
+
+.repair-form textarea{
+    resize: none;
+    width: 98%;
+    padding: 10px 15px;
+    color: #1c1a18;
+    border: 1px solid rgba(28, 26, 24, 0.5);
+}
+
+/* Buttons */
+.repair-form .btn {
+    width: 8rem;
+    height: 3rem;
+    padding: 7px;
+    margin: 0;
+}
+
+.btn.custom-submit {
+    padding: auto;
+    background-color: rgba(66, 92, 90, 1);
+    border: 1px solid rgba(66, 92, 90, 1);
+    color: #fff;
+}
+.btn.custom-submit:hover,
+.btn.custom-submit:focus {
+    background-color: rgba(66, 92, 90, 0.65);
+    border: 1px solid rgba(66, 92, 90, 0.95);
+    box-shadow: none;
+    color: #000;
+}
+  
+.btn.custom-cancel {
+    padding: auto;
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(189, 32, 49, 1);
+    color: rgba(189, 32, 49, 1);
+}
+.btn.custom-cancel:hover,
+.btn.custom-cancel:focus {
+    background-color: rgba(189, 32, 49, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    box-shadow: none;
+    color: #fff
+}

@@ -1,0 +1,30 @@
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+footer {
+    margin-top: auto;
+  }
+  
+  .footer-custom a {
+    color: white;
+    font-size: 1rem;
+    line-height: 1.75;
+    text-decoration: none;
+  }
+  .footer-custom a:hover {
+    color: white;
+    text-decoration: underline;
+  }
+  .footer-copyright {
+    background-color: #425c5a;
+    color: white;
+  }
+  .footer-copyright p {
+    margin: 0;
+    font-size: 0.85rem;
+  }
+  .footer-copyright a {
+    margin: 0;
+    font-size: 0.85rem;
+  }

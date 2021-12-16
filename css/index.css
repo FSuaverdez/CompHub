@@ -1,0 +1,44 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    background-color: #e5e5e5;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.general-container {
+    margin-left: 25vh;
+    margin-right: 25vh;
+}
+@media screen and (max-width: 720px){
+    .general-container {
+        margin-left: 10vh;
+        margin-right: 10vh;
+    }
+}
+
+section {
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+
+.card-body {
+    text-align: center;
+}
+.card-body a {
+    text-decoration: none;
+}
+
+.home-btn a{
+    color: #425c5a;
+    font-size: 1.15rem;
+}
+
+.home-btn a:hover {
+    color: #425c5a;
+    font-weight: bold;
+}

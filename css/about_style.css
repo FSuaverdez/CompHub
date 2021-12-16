@@ -1,0 +1,36 @@
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+.aboutus-title {
+    font-size: 2rem;
+    font-weight: bold;
+}
+.aboutus-subtitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+.aboutus p {
+    color: #1c1a18;
+    font-size: 1.15rem;
+    line-height: 2.25rem;
+}
+.aboutus-p {
+    text-indent: 3rem;
+    text-align: justify;
+}
+
+
+.round-image {
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+.member {
+    text-align: center;
+    font-size: 1.15rem;
+}
