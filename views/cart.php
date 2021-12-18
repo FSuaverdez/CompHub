@@ -98,6 +98,7 @@ if (isset($_POST['cod'])) {
                             <thead style="border-top: 1px solid #1c1a18">
                                 <td class="transaction-table-total">Total</td>
                                 <td class="transaction-table-total">-</td>
+                                <td class="transaction-table-total">-</td>
                                 <td class="transaction-table-total">
                                     <div>₱<span id="printTotal"><?php echo number_format($total, 2); ?></span></div> <!-- checkCount * price -->
                                 </td>
