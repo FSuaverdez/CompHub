@@ -21,7 +21,7 @@ body {
     }
 }
 
-section {
+.section-buttons {
     padding-left: 5vw;
     padding-right: 5vw;
 }
@@ -41,4 +41,55 @@ section {
 .home-btn a:hover {
     color: #023047;
     font-weight: bold;
+}
+
+.full-div {
+    height: 83vh;
+    padding: auto;
+}
+
+.dark-div {
+    color: #ffffff;
+    background-color: #023047;
+    text-align: center;
+    height: 87vh;
+}
+.dark-div h3 {
+    font-weight: bold;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+}
+.dark-div p {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+}
+.dark-div span{
+    font-size: 1.5rem;
+    padding: 2px 3px;
+    background: linear-gradient(to right, #e5e5e5 50%, #023047 50%);
+    background-size: 201% 100%;
+    background-position: right bottom;
+    transition: all .5s ease-out;
+}
+.dark-div span:hover {
+    font-size: 1.55rem;
+    padding: 2px 8px;
+    background-position: left top;
+    color: #023047;
+}
+
+
+.btn.btn-wwd {
+    width: 8rem;
+    height: auto;
+    padding: 10px;
+    border: 3px solid rgba(229, 229, 229, 1);
+    color: #ffffff;
+}
+.btn.btn-wwd:hover,
+.btn.btn-wwd:focus {
+    background-color: rgba(107, 204, 220, 1);
+    border: 3px solid rgba(229, 229, 229, 0.8);
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24),0 3px 3px 0 rgba(0,0,0,0.19);
+    color: #023047;
 }

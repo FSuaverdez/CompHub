@@ -13,7 +13,7 @@ body {
 
 #navbar {
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #f7f8f3;
     padding: 30px 50px;
     transition: 1s;
     position: fixed;
@@ -45,8 +45,8 @@ body {
     font-style: normal;
 }
 .navbar-custom a:hover {
-    color: rgba(28, 26, 24, 0.5);
-    font-weight: 500;
+    color: rgba(2, 48, 71, 0.8);
+    font-weight: bold;
     float: left;
     text-align: center;
     text-decoration: none;

@@ -6,8 +6,10 @@
 }
 
 .repair-holder h1 {
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: bold;
+    text-align: center;
+    margin-bottom: 2.5rem;
 }
 
 .repair-holder h4 {
@@ -16,13 +18,15 @@
 }
 
 .repair-holder h5 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 600;
+    text-align: center;
     color: rgba(0, 0, 0, 0.75);
+    margin-bottom: 1rem;
 }
 
 .repair-form input {
-    width: 98%;
+    width: 40vw;
     height: 40px;
     padding-left: 15px;
     padding-right: 15px;
@@ -32,7 +36,7 @@
 
 .repair-form textarea{
     resize: none;
-    width: 98%;
+    width: 40vw;
     padding: 10px 15px;
     color: #1c1a18;
     border: 1px solid rgba(28, 26, 24, 0.5);

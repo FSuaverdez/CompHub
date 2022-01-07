@@ -3,9 +3,8 @@
     include('navbar.php');
 ?>
 
-<section class="repair-holder mx-auto" style="width:55%">
+<section class="repair-holder mx-auto">
     <h1>Ask for Assistance</h1>
-    <hr/>
     <form action="request.php" method="post">
         <div class="row repair-form">
             <div class="col-md-12">
@@ -29,7 +28,7 @@
                     <input id="repair-dept" name="department" type="text" placeholder="Employee ID" required/>
                 </div>
                 
-                <hr/>
+                <hr class="short-line"/>
                 
                 <h5>Issue</h5>
 

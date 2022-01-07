@@ -10,14 +10,24 @@
     <!-- main body -->
     <main>
         <!-- Banner -->
-        <section>
-
+        <section style="margin-top: 30vh">
+            <div class="dark-div d-flex align-items-center">
+                <div class="col">
+                    <h3>What We Do</h3>
+                    <p>
+                        Giga Shop is your number one source of computer hardware components and best repair services.<br/>
+                        We're dedicated to giving you the very best of your needs, with a focus on<br/>
+                        <span>high-quality technology</span> and <span>world-class service.</span>
+                    </p>
+                    <a href="about.php" class="btn btn-wwd">Learn More</a>
+                </div>
+            </div>
         </section>
 
         <!-- Buttons -->
-        <section class="container-fluid mb-5" style="margin-top: 40vh">
-            <div class="general-container d-flex justify-content-center">
-                <div class="row" style="margin-bottom: 10vh">
+        <section class="container-fluid section-buttons mb-5">
+            <div class="general-container d-flex justify-content-center align-items-center full-div">
+                <div class="row">
                     <div class="col">
                         <a href="shop.php">
                             <div class="card mx-4" style="width: 15rem;">

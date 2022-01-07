@@ -8,8 +8,8 @@ include('../source/db_connect.php');
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CompHub</title>
-    <link rel="shortcut icon" href="../images/CompHub-Logo.png" type="image/png+xml" />
+    <title>Giga Shop</title>
+    <link rel="shortcut icon" href="../images/GigaShop-Logo.png" type="image/png+xml" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- CSS -->
     <link rel="stylesheet" href="../css/index.css?v=<?php echo time(); ?>">

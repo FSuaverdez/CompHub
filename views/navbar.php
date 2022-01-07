@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-md navbar-custom p-0">
         <div id="navbar" style="background: url(../images/nav-big-bg.svg); background-size: cover; background-position: center">
             <a class="navbar-brand logo" id="nav-logo" href="home.php" style="display:none">
-                <img src="../images/CompHub-logo.png" class="mx-auto my-2" style="height: 65px" />
+                <img src="../images/GigaShop-logo.png" class="mx-auto my-2" style="height: 65px" />
             </a>
             <button class="navbar-toggler custom-toggler my-3" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" onclick="changeHeight()" style="float: right">
                 <span class="navbar-toggler-icon "></span>
@@ -13,8 +13,7 @@
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="home.php" id="home">HOME</a></li>
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="shop.php" id="shop">SHOP</a></li>
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="repair.php" id="repair">REPAIR</a></li>
-                    <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="about.php" id="repair">ABOUT</a></li>
-                    <!-- <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="about.php" id="about">ABOUT US</a></li> -->
+                    <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="about.php" id="about">ABOUT</a></li>
                 </ul>
             </div>
         </div>
@@ -30,7 +29,7 @@
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
             document.getElementById("navbar").style.padding = "0px 30px";
             document.getElementById("navbar").style.height = "auto";
-            document.getElementById("navbar").style.background = "#F7F8F3";
+            document.getElementById("navbar").style.background = "#f7f8f3";
             document.getElementById("nav-logo").style.display = "block";
         } else {
             document.getElementById("navbar").style.padding = "30px 50px";
