@@ -2,7 +2,7 @@
 <html>
 
 <?php
-    include('../source/db_connect.php');
+include('../source/db_connect.php');
 ?>
 
 <head>
@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="../css/about_style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="../css/footer_style.css?v=<?php echo time(); ?>">
     <!-- /CSS -->
-    
+
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
@@ -31,5 +31,5 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
     <!-- /Bootstrap 4 -->
-    <script src="jquery.js"></script>
+    <script src="../vendor/jquery/jquery-3.2.1.min.js"></script>
 </head>

@@ -68,7 +68,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>User ID</th>
+            <th>Paypal Transaction ID</th>
             <th>Total Cost</th>
             <th>Profit</th>
             <th>Date Bought</th>
@@ -80,7 +80,7 @@
           while ($row = $result->fetch_assoc()) : ?>
             <tr>
               <td><?php echo $row['id']; ?></td>
-              <td><?php echo $row['user']; ?></td>
+              <td><?php echo $row['transaction_id']; ?></td>
               <td><?php echo $row['total']; ?></td>
               <?php
               $total =  ($total) + $row['total'];
@@ -157,7 +157,7 @@
       </div>
     </div>
   </div>
-  <script src="js/script.js"></script>
+  <script src="../js/script.js"></script>
 
   <script>
     $(document).ready(function() {

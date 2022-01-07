@@ -7,8 +7,10 @@ include('navbar.php');
 
 ?>
 
-<?php
 
+
+<?php
+$totalAmount = 0;
 
 $connect = mysqli_connect("localhost", "root", "", "request");
 
@@ -38,24 +40,6 @@ if (isset($_POST["add_to_cart"])) {
     }
 }
 
-if (isset($_POST['cod'])) {
-
-    $mysqli = new mysqli('localhost', 'root', '', 'request') or die(mysqli_error($mysqli));
-    $conn = mysqli_connect('localhost', 'root', '');
-    $db = mysqli_select_db($conn, 'request');
-
-    $saved_prod = $_POST['hidden_product'];
-    $saved_total = $_POST['hidden_total'];
-    $userid = $_SESSION['id'];
-
-    date_default_timezone_set("Asia/Manila");
-    $date = date("Y-m-d h:i:s a");
-
-    $mysqli->query("INSERT into purchase_history (user,products,total,date_bought) VALUES ('$userid','$saved_prod','$saved_total','$date')")
-        or die($mysqli->error);
-
-    echo "<script> alert('Processing Delivery. Thank You for using CompHub!'); window.location = 'home.php' </script>";
-}
 
 
 
@@ -91,6 +75,7 @@ if (isset($_POST['cod'])) {
                                     <div>₱<span id="printSubtotal"><?php echo $values["item_price"] * $values["item_qty"]; ?></span>.00</div> <!-- checkCount * price -->
                                 <?php
                                 $total = $total + ($values['item_price'] * $values["item_qty"]);
+                                $totalAmount = $total;
                             }
                                 ?>
                                 </td>
@@ -168,7 +153,7 @@ if (isset($_POST['cod'])) {
                                                                         } ?>" />
                     <input type="hidden" name="hidden_total" value="<?php echo $total ?>" />
 
-                    <input type="submit" value="Cash on Delivery" name="cod">
+                    <div id="paypal-button"></div>
 
                 </form>
                 <!-- Transaction Button -->
@@ -227,5 +212,67 @@ if (isset($_POST['cod'])) {
         }
     }
 </script>
+<script src="https://www.paypalobjects.com/api/checkout.js"></script>
 
+<script>
+    paypal.Button.render({
+        // Configure environment
+        env: 'sandbox',
+        client: {
+            sandbox: 'AS0OYjYmD_LErfQVR-HptUpYDyRppEksv0HIXoB0ffSf1sufasjp64RCJdVkCmVDThFo9klYQQ1Ub0cL',
+            production: 'demo_production_client_id'
+        },
+        // Customize button (optional)
+        locale: 'en_US',
+        style: {
+            size: 'small',
+            color: 'gold',
+            shape: 'pill',
+        },
+        // Enable Pay Now checkout flow (optional)
+        commit: true,
+        // Set up a payment
+        payment: function(data, actions) {
+            return actions.payment.create({
+                transactions: [{
+                    amount: {
+                        total: <?php echo $totalAmount; ?>,
+                        currency: 'PHP'
+                    }
+                }]
+            });
+        },
+        // Execute the payment
+        onAuthorize: function(data, actions) {
+            return actions.payment.execute().then(async function(data) {
+                console.log(data)
+                $.ajax({
+                    type: "POST",
+                    url: "transaction.php",
+                    data: {
+                        hidden_product: '<?php foreach ($_SESSION["shopping_cart"] as $keys => $values) {
+                                                echo $values["item_name"];
+                                            } ?>',
+                        hidden_total: <?php echo $totalAmount; ?>,
+                        transaction_id: data.transactions[0].related_resources[0].sale.id
+                    },
+                    cache: false,
+                    success: function(data) {
+                        const response = JSON.parse(data)
+                        if (response.transaction_id) {
+                            alert('Payment Successful');
+                            window.location.assign('home.php')
+                        } else {
+                            alert('Payment Error');
+                            window.location.assign('home.php')
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr);
+                    }
+                })
+            });
+        }
+    }, '#paypal-button');
+</script>
 <?php include('footer.php'); ?>

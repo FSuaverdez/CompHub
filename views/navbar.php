@@ -8,12 +8,12 @@
                 <span class="navbar-toggler-icon "></span>
             </button>
 
-            <div class="collapse navbar-collapse my-2 py-2" id="collapsibleNavbar"> 
+            <div class="collapse navbar-collapse my-2 py-2" id="collapsibleNavbar">
                 <ul class="navbar-nav navbar-custom mr-auto my-auto">
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="home.php" id="home">HOME</a></li>
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="shop.php" id="shop">SHOP</a></li>
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="repair.php" id="repair">REPAIR</a></li>
-                    <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="about.php" id="about">ABOUT US</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="about.php" id="about">ABOUT US</a></li> -->
                 </ul>
             </div>
         </div>
@@ -21,7 +21,9 @@
 </header>
 
 <script>
-    window.onscroll = function() {scrollFunction()};
+    window.onscroll = function() {
+        scrollFunction()
+    };
 
     function scrollFunction() {
         if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
@@ -39,7 +41,7 @@
         }
     }
 
-    function changeHeight(){
+    function changeHeight() {
         var x = document.getElementById("navbar");
         if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
             if (x.style.height === "90px") {
@@ -47,15 +49,15 @@
             } else {
                 x.style.height = "90px";
             }
-        // } else if (x.style.height === "100vh" && (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)) {
-        //     if (x.style.height === "100vh") {
-        //         x.style.height = "100vh";
-        //     } else if (x.style.height === "100vh" && (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)) {
-        //         x.style.height = "375px";
-        //     } else {
-        //         // x.style.height = "90px";
-        //         x.style.height = "375px";
-        //     }
+            // } else if (x.style.height === "100vh" && (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)) {
+            //     if (x.style.height === "100vh") {
+            //         x.style.height = "100vh";
+            //     } else if (x.style.height === "100vh" && (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50)) {
+            //         x.style.height = "375px";
+            //     } else {
+            //         // x.style.height = "90px";
+            //         x.style.height = "375px";
+            //     }
         }
     }
 </script>

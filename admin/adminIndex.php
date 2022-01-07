@@ -4,27 +4,28 @@ require_once '../source/db_connect.php';
 
 if (isset($_POST['login-btn'])) {
 
-    $user = $_POST['username'];
-    $password = $_POST['pass'];
+	$user = $_POST['username'];
+	$password = $_POST['pass'];
 
-    $conn = mysqli_connect('localhost', 'root', '');
-    $db = mysqli_select_db($conn, 'request');
-    $query = mysqli_query($conn, "SELECT * FROM admin WHERE password ='$password' AND username = '$user'");
-    $rows = mysqli_num_rows($query);
+	$conn = mysqli_connect('localhost', 'root', '');
+	$db = mysqli_select_db($conn, 'request');
+	$query = mysqli_query($conn, "SELECT * FROM admin WHERE password ='$password' AND username = '$user'");
+	$rows = mysqli_num_rows($query);
 
-    if ($rows == 1) {
-        $_SESSION['username'] = $user;
-        header("Location: adminProduct.php");
-    } else {
-        echo "<script> alert('Invalid Username or Password!'); window.location = 'index.php' </script>";
-    }
-    mysqli_close($conn);
+	if ($rows == 1) {
+		$_SESSION['username'] = $user;
+		header("Location: adminProduct.php");
+	} else {
+		echo "<script> alert('Invalid Username or Password!'); window.location = 'index.php' </script>";
+	}
+	mysqli_close($conn);
 }
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<title>Administrator</title>
 	<meta charset="UTF-8">
@@ -42,6 +43,7 @@ if (isset($_POST['login-btn'])) {
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 </head>
+
 <body>
 
 	<div class="limiter">
@@ -55,19 +57,19 @@ if (isset($_POST['login-btn'])) {
 					<span class="txt1 p-b-11">
 						Username
 					</span>
-					<div class="wrap-input100 validate-input m-b-36" data-validate = "Username is required">
-						<input class="input100" type="text" name="username" >
+					<div class="wrap-input100 validate-input m-b-36" data-validate="Username is required">
+						<input class="input100" type="text" name="username">
 						<span class="focus-input100"></span>
 					</div>
 
 					<span class="txt1 p-b-11">
 						Password
 					</span>
-					<div class="wrap-input100 validate-input m-b-12" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input m-b-12" data-validate="Password is required">
 						<span class="btn-show-pass">
 							<i class="fa fa-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass" >
+						<input class="input100" type="password" name="pass">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -110,4 +112,5 @@ if (isset($_POST['login-btn'])) {
 	<script src="js/main.js"></script>
 
 </body>
+
 </html>
