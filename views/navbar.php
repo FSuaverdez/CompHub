@@ -13,6 +13,7 @@
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="home.php" id="home">HOME</a></li>
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="shop.php" id="shop">SHOP</a></li>
                     <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="repair.php" id="repair">REPAIR</a></li>
+                    <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="about.php" id="repair">ABOUT</a></li>
                     <!-- <li class="nav-item"><a class="nav-link mx-1 px-3 pt-3 pb-2" href="about.php" id="about">ABOUT US</a></li> -->
                 </ul>
             </div>

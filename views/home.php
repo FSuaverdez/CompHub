@@ -31,7 +31,7 @@
                     <div class="col">
                         <a href="repair.php">
                             <div class="card mx-4" style="width: 15rem;">
-                                    <img src="../images/repair.png" class="card-img-top" alt="Repair">
+                                    <img src="../images/assist.png" class="card-img-top" alt="Repair">
                                 <div class="card-body home-btn">
                                     <a href="repair.php">Ask for Assistance</a>
                                 </div>

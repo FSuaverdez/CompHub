@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 19, 2021 at 05:21 PM
--- Server version: 10.4.8-MariaDB
--- PHP Version: 7.3.11
+-- Generation Time: Jan 07, 2022 at 11:10 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.0.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -78,24 +77,25 @@ INSERT INTO `products` (`id`, `product_name`, `product_category`, `image`, `prod
 
 CREATE TABLE `purchase_history` (
   `id` int(11) NOT NULL,
-  `user` int(11) NOT NULL,
   `products` varchar(255) NOT NULL,
+  `qty` int(11) NOT NULL,
   `total` varchar(255) NOT NULL,
-  `date_bought` datetime NOT NULL
+  `date_bought` datetime NOT NULL,
+  `transaction_id` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `purchase_history`
 --
 
-INSERT INTO `purchase_history` (`id`, `user`, `products`, `total`, `date_bought`) VALUES
-(1, 1, '', '11589', '2021-06-15 04:05:38'),
-(2, 1, '', '9', '2021-06-15 10:46:59'),
-(3, 3, '', '9', '2021-06-15 10:47:57'),
-(4, 0, '', '15655', '2021-06-17 05:34:05'),
-(5, 0, '', '6262', '2021-06-17 05:34:45'),
-(6, 0, '', '320', '2021-06-19 05:32:53'),
-(7, 0, '', '1500', '2021-06-19 10:59:23');
+INSERT INTO `purchase_history` (`id`, `products`, `qty`, `total`, `date_bought`, `transaction_id`) VALUES
+(26, 'DDR4 8GB 3200MHz', 1, '2500', '2022-01-07 12:56:06', '4DN18105W50029904'),
+(27, 'DDR4 8GB 3200MHz', 2, '5000', '2022-01-07 12:58:13', '9HF532108D857383J'),
+(28, '250GB Solid State Drive', 2, '3000', '2022-01-07 12:58:46', '6KD61102S0359942L'),
+(29, 'DDR4 4GB 2400MHz', 1, '1000', '2022-01-07 01:11:10', '7RB46919R0001530M'),
+(30, '80mm 8cm DC12V Brushless Computer PC Case Cooler Fan', 3, '360', '2022-01-07 01:12:29', '7K470667KN594241R'),
+(31, '1 Meter Micro HDMI to HDMI 2.0', 2, '640', '2022-01-07 01:14:53', '1B096051BB767623E'),
+(32, 'DDR4 4GB 2400MHz', 2, '2000', '2022-01-07 06:04:43', '4VV05363JE481211D');
 
 -- --------------------------------------------------------
 
@@ -124,7 +124,9 @@ INSERT INTO `ticket` (`id`, `name`, `email`, `employee_id`, `department`, `subje
 (1, 'Gerard', 'admin@example.com', 2, 'IT', 'tester', 'tqwrqwrwqqr', '2021-03-27 02:30:34', '2021-03-27 02:31:33', 'Resolved'),
 (2, 'Julius', 'julius@sample.com', 609, 'IT', 'Trial', 'This is a trial message', '2021-03-27 08:03:14', '2021-03-27 08:03:28', 'Resolved'),
 (3, 'Mark', 'mark@sample.com', 420, 'IT', 'Amber', 'Give me C6 amber', '2021-03-27 08:04:56', '2021-03-27 08:05:33', 'Resolved'),
-(4, 'Client test', 'client@sample.com', 1245, 'IT', 'Hardware malfunction/issue', 'There has been a hardware issue that i cannot turn on the computer.', '2021-03-27 08:28:05', '2021-03-27 08:31:23', 'Resolved');
+(4, 'Client test', 'client@sample.com', 1245, 'IT', 'Hardware malfunction/issue', 'There has been a hardware issue that i cannot turn on the computer.', '2021-03-27 08:28:05', '2021-03-27 08:31:23', 'Resolved'),
+(5, 'Frannz', 'Test', 0, 'test', 'test', 'test', '2021-12-16 09:10:42', NULL, 'In Queue'),
+(6, 'Frannz ', 'frannz@test.com', 12312312, '123123', '123123', 'jfjksdhfjksdjhfjkasdhfjsjkdhfjksdhjkfjksd', '2021-12-18 01:37:40', NULL, 'In Queue');
 
 --
 -- Indexes for dumped tables
@@ -168,19 +170,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `purchase_history`
 --
 ALTER TABLE `purchase_history`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `ticket`
 --
 ALTER TABLE `ticket`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
