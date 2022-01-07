@@ -64,11 +64,13 @@
         </div>
       </div>
 
-      <table class="table table-hover table-striped  mx-auto mt-0 px-auto">
+      <table class="table table-hover table-striped mx-auto mt-0 px-auto">
         <thead>
           <tr>
             <th>ID</th>
             <th>Paypal Transaction ID</th>
+            <th>Products</th>
+            <th>Qty</th>
             <th>Total Cost</th>
             <th>Profit</th>
             <th>Date Bought</th>
@@ -81,6 +83,8 @@
             <tr>
               <td><?php echo $row['id']; ?></td>
               <td><?php echo $row['transaction_id']; ?></td>
+              <td><?php echo $row['products']; ?></td>
+              <td><?php echo $row['qty']; ?></td>
               <td><?php echo $row['total']; ?></td>
               <?php
               $total =  ($total) + $row['total'];

@@ -11,6 +11,7 @@ include('navbar.php');
 
 <?php
 $totalAmount = 0;
+$qty = 0;
 
 $connect = mysqli_connect("localhost", "root", "", "request");
 
@@ -137,6 +138,7 @@ if (isset($_POST["add_to_cart"])) {
             <?php
                                 $products = $values["item_name"];
                                 $total = $total + ($values['item_price'] * $values['item_qty']);
+                                $qty += $values['item_qty'];
                             }
                         }
             ?>
@@ -238,10 +240,16 @@ if (isset($_POST["add_to_cart"])) {
                     amount: {
                         total: <?php echo $totalAmount; ?>,
                         currency: 'PHP'
+                    },
+                    item_list: {
+                        items: [<?php foreach ($_SESSION["shopping_cart"] as $keys => $values) {
+                                    echo json_encode(['name' => $values["item_name"], 'description' => $values["item_name"], 'quantity' => $values["item_qty"], 'price' => $values["item_price"], 'tax' => '0.1', "sku" => $keys + 1, "currency" => "PHP"]);
+                                } ?>]
                     }
                 }]
             });
         },
+
         // Execute the payment
         onAuthorize: function(data, actions) {
             return actions.payment.execute().then(async function(data) {
@@ -254,7 +262,8 @@ if (isset($_POST["add_to_cart"])) {
                                                 echo $values["item_name"];
                                             } ?>',
                         hidden_total: <?php echo $totalAmount; ?>,
-                        transaction_id: data.transactions[0].related_resources[0].sale.id
+                        transaction_id: data.transactions[0].related_resources[0].sale.id,
+                        qty: <?php echo $qty; ?>,
                     },
                     cache: false,
                     success: function(data) {
@@ -269,8 +278,12 @@ if (isset($_POST["add_to_cart"])) {
                     },
                     error: function(xhr, status, error) {
                         console.error(xhr);
+                        alert('Payment Error');
+                        window.location.assign('home.php')
                     }
                 })
+            }).catch(error => {
+                console.log('error')
             });
         }
     }, '#paypal-button');
