@@ -1,6 +1,6 @@
 <!-- Shop Navigation Bar -->
 
-<ul class="nav nav-tabs mb-4">
+<ul class="nav nav-tabs mb-4 mr-auto w-100">
     <!-- All -->
     <li class="nav-item">
         <a class="nav-item shop-nav-item nav-link active" id="shopAll-tab" data-toggle="tab" href="#shopAll" role="tab" aria-controls="nav-genre-action-tab" aria-selected="false">All</a>
@@ -29,9 +29,9 @@
     <li class="nav-item">
         <a class="nav-item shop-nav-item nav-link" id="shopOthers-tab" data-toggle="tab" href="#shopOthers" role="tab" aria-controls="shopOthers-tab" aria-selected="false">Others</a>
     </li>
-
-    <li class="ml-auto">
-        <!-- Search form -->
+    
+    <!-- Search form -->
+    <div class="ml-auto">
         <div class="row ml-auto">
             <ul class="row navbar-nav ml-md-auto mr-sm-auto">
                 <li class="nav-item"><a class="nav-link mx-1 px-3 py-2" href="cart.php" id="cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> CART</a></li>
@@ -44,6 +44,6 @@
                 <div class="search-result" id="result"></div>
             </form>
         </div>
-    </li>
+    </div>
+    
 </ul>
-
