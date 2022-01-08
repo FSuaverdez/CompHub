@@ -32,19 +32,19 @@
             <div class="row mx-auto text-center">
                 <div class="col col-md-3 col-sm-6 my-3">
                     <div class="member-container">
-                        <img src="../images/members/ilarina.jpg" class="round-image" />
+                        <img src="../images/members/angelo.png" class="round-image" />
                     </div>
                     <p class="member my-2">Angelo Baclaan</p>
                 </div>
                 <div class="col col-md-3 col-sm-6 my-3">
                     <div class="member-container">
-                        <img src="../images/members/will.png" class="round-image" />
+                        <img src="../images/members/alvin.png" class="round-image" />
                     </div>
                     <p class="member my-2">Alvin Lim</p>
                 </div>
                 <div class="col col-md-3 col-sm-6 my-3">
                     <div class="member-container">
-                    <img src="../images/members/mark.png" class="round-image" />
+                    <img src="../images/members/frannz.png" class="round-image" />
                     </div>
                     <p class="member my-2">Frannz Suaverdez</p>
                 </div>
