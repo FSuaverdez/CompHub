@@ -2,6 +2,22 @@
     font-family: 'Lato', sans-serif;
 }
 
+.shop-title {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Shop Nav Bar */
+.shop-nav-item {
+    color: rgba(2, 48, 71, 0.8);
+}
+.shop-nav-item:hover,
+.shop-nav-item:active {
+    color: rgba(2, 48, 71, 1);
+}
+
 /* Search Bar */
 .form-search-custom .search-custom {
     color: black;
@@ -52,6 +68,11 @@
 
 .shop-holder.form-search-custom {
     width: 10px;
+}
+
+.card-body h5 {
+    font-size: 1.05rem;
+    font-weight: bold;
 }
 
 .card.card-container {

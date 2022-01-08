@@ -11,26 +11,14 @@ if (isset($_POST['valueToSearch'])) {
 
 ?>
 <main class="general-container">
-    <section class="container-fluid shop-holder mx-auto" style="margin-top: 7.5rem">
+    <h1 class="shop-title col-lg-4 col-md-4 col-sm-6 col-xs-12 mx-auto" style="margin-top: 7.5rem">Shop</h1>
+    <section class="container-fluid shop-holder mx-auto">
         <div class="row">
-            <h1 class="col-lg-4 col-md-4 col-sm-6 col-xs-12">Shop</h1>
-            <div class="col-lg-2 col-md-2"></div>
-            <!-- Search form -->
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 mb-3">
-                <div class="row">
-                    <div class="col-3"></div>
-                    <ul class="col-3 navbar-nav ml-md-auto mr-sm-auto">
-                        <li class="nav-item"><a class="nav-link mx-1 px-3 py-2" href="cart.php" id="cart"> <i class="fa fa-shopping-cart" aria-hidden="true"></i> CART</a></li>
-                    </ul>
-                    <form class="col-6 row form-inline form-search-custom ml-auto" method="post">
-                        <input name="valueToSearch" id="search_text" class="col form-control search-custom" type="text" placeholder="Search Bar..." autocomplete="off" aria-label="Search">
-                        <button type="submit" class="btn col p-0" name="search_button" id="search_button">
-                            <i class="fa fa-search text-black ml-3 d-lg-inline d-none" aria-hidden="true"></i>
-                        </button>
-                        <div class="search-result" id="result"></div>
-                    </form>
-                </div>
-            </div>
+            <!-- <div class="row-lg-2 row-md-2"> -->
+                <?php include('shop-nav.php'); ?>
+            <!-- </div> -->
+            
+            
 
             <hr />
 
@@ -44,15 +32,15 @@ if (isset($_POST['valueToSearch'])) {
                                 continue;
                             }
                         } ?>
-                        <div class="col mb-3 px-3">
+                        <div class="d-flex justify-content-around col mb-3 px-3">
                             <form action="cart.php" method="post">
                                 <div class="card card-container">
                                     <img src="../admin/images/<?= $row['image'] ?>" class="card-img-top">
                                     <div class="card-body">
                                         <h5>
                                             <?=
-                                            substr($row['product_name'], 0, 15);
-                                            if (strlen($row['product_name']) > 15) {
+                                            substr($row['product_name'], 0, 18);
+                                            if (strlen($row['product_name']) > 18) {
                                                 echo "...";
                                             }
                                             ?>
