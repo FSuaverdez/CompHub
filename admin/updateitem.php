@@ -31,9 +31,6 @@ if(isset($_POST['update-item']))
 
             header("Location: adminProduct.php");
         } else if (file_exists($image) === false) {
-            // insert code for set image as is
-            
-    
             $msg ="Item uploaded successfully without image";
 
             $_SESSION['message'] = "Record has been updated without image!";
