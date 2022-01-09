@@ -231,3 +231,6 @@ table.table .avatar {
 .modal form label {
   font-weight: normal;
 }
+.issue_container{
+  text-overflow:hidden;
+}

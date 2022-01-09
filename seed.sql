@@ -29,8 +29,6 @@ CREATE TABLE `ticket` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `employee_id` int(10) NOT NULL,
-  `department` varchar(255) NOT NULL,
   `subject` varchar(255) NOT NULL,
   `issue` varchar(255) NOT NULL,
   `date_issued` datetime DEFAULT NULL,
@@ -85,10 +83,10 @@ INSERT INTO `purchase_history` (`id`, `products`, `qty`, `total`, `date_bought`,
 (31, '1 Meter Micro HDMI to HDMI 2.0', 2, '640', '2022-01-07 01:14:53', '1B096051BB767623E'),
 (32, 'DDR4 4GB 2400MHz', 2, '2000', '2022-01-07 06:04:43', '4VV05363JE481211D');
 
-INSERT INTO `ticket` (`id`, `name`, `email`, `employee_id`, `department`, `subject`, `issue`, `date_issued`, `date_resolved`, `status_update`) VALUES
-(1, 'Gerard', 'admin@example.com', 2, 'IT', 'tester', 'tqwrqwrwqqr', '2021-03-27 02:30:34', '2021-03-27 02:31:33', 'Resolved'),
-(2, 'Julius', 'julius@sample.com', 609, 'IT', 'Trial', 'This is a trial message', '2021-03-27 08:03:14', '2021-03-27 08:03:28', 'Resolved'),
-(3, 'Mark', 'mark@sample.com', 420, 'IT', 'Amber', 'Give me C6 amber', '2021-03-27 08:04:56', '2021-03-27 08:05:33', 'Resolved'),
-(4, 'Client test', 'client@sample.com', 1245, 'IT', 'Hardware malfunction/issue', 'There has been a hardware issue that i cannot turn on the computer.', '2021-03-27 08:28:05', '2021-03-27 08:31:23', 'Resolved'),
-(5, 'Frannz', 'Test', 0, 'test', 'test', 'test', '2021-12-16 09:10:42', NULL, 'In Queue'),
-(6, 'Frannz ', 'frannz@test.com', 12312312, '123123', '123123', 'jfjksdhfjksdjhfjkasdhfjsjkdhfjksdhjkfjksd', '2021-12-18 01:37:40', NULL, 'In Queue');
+INSERT INTO `ticket` (`id`, `name`, `email`, `subject`, `issue`, `date_issued`, `date_resolved`, `status_update`) VALUES
+(1, 'Gerard', 'admin@example.com', 'tester', 'tqwrqwrwqqr', '2021-03-27 02:30:34', '2021-03-27 02:31:33', 'Resolved'),
+(2, 'Julius', 'julius@sample.com',  'Trial', 'This is a trial message', '2021-03-27 08:03:14', '2021-03-27 08:03:28', 'Resolved'),
+(3, 'Mark', 'mark@sample.com',  'Amber', 'Give me C6 amber', '2021-03-27 08:04:56', '2021-03-27 08:05:33', 'Resolved'),
+(4, 'Client test', 'client@sample.com',  'Hardware malfunction/issue', 'There has been a hardware issue that i cannot turn on the computer.', '2021-03-27 08:28:05', '2021-03-27 08:31:23', 'Resolved'),
+(5, 'Frannz', 'Test', 'test', 'test', '2021-12-16 09:10:42', NULL, 'In Queue'),
+(6, 'Frannz ', 'frannz@test.com', '123123', 'jfjksdhfjksdjhfjkasdhfjsjkdhfjksdhjkfjksd', '2021-12-18 01:37:40', NULL, 'In Queue');

@@ -65,13 +65,13 @@ if (isset($_POST['item-insert'])) {
                     <div class="collapse navbar-collapse my-2 py-2" id="collapsibleNavbar">
                         <ul class="navbar-nav ml-lg-auto">
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="adminUser.php">Accounts<span class="sr-only">(current)</span></a>
-                            </li>
-                            <li class="nav-item">
                                 <a class="nav-link" href="adminProduct.php">Product</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="adminStatus.php">Services</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="adminTicket.php" id="accounts">Tickets<span class="sr-only">(current)</span></a>
                             </li>
                             <li>
                                 <button class="btn btn-dark" data-toggle="modal" data-target=".bs-example-modal-sm">Logout</button>

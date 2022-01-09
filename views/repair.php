@@ -15,17 +15,7 @@
 
                 <h4>Email</h4>
                 <div class="form-group pb-4">
-                    <input id="repair-email" name="email" type="text" placeholder="Contact Email" required/>
-                </div>
-
-                <h4>Employee ID</h4>
-                <div class="form-group pb-4">
-                    <input id="repair-empID" name="empID" type="text" placeholder="Employee ID" required/>
-                </div>
-
-                <h4>Department</h4>
-                <div class="form-group pb-4">
-                    <input id="repair-dept" name="department" type="text" placeholder="Employee ID" required/>
+                    <input id="repair-email" name="email" type="email" placeholder="Contact Email" required/>
                 </div>
                 
                 <hr class="short-line"/>
