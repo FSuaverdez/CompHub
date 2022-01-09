@@ -32,7 +32,7 @@ if (isset($_POST['item-insert'])) {
     <title>Administrator</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="../images/CompHub-Logo.png" type="image/png+xml" />
+    <link rel="shortcut icon" href="../images/GigaShop-Logo.png" type="image/png+xml" />
     <link rel="stylesheet" href="../css/adminProduct.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -54,7 +54,7 @@ if (isset($_POST['item-insert'])) {
             <nav class="navbar navbar-expand-md navbar-custom fixed-top px-5 py-0">
                 <div class="container-fluid">
                     <a class="navbar-brand" href="#">
-                        <img src="../images/CompHub-Logo.png" alt="CompHub" class="ml-5 my-1" style="height: 70px" />
+                        <img src="../images/GigaShop-Logo.png" alt="Giga Shop" class="ml-5 my-1" style="height: 70px" />
                         ADMINISTRATOR
                     </a>
 

@@ -4,7 +4,7 @@
 <head>
   <title>Administrator</title>
   <meta charset="utf-8">
-  <link rel="shortcut icon" href="../images/CompHub-Logo.png" type="image/png+xml" />
+  <link rel="shortcut icon" href="../images/GigaShop-Logo.png" type="image/png+xml" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="../css/adminStatus.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -26,7 +26,7 @@
       <nav class="navbar navbar-expand-md navbar-custom fixed-top px-5 py-0">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="../images/CompHub-Logo.png" alt="CompHub" class="ml-5 my-1" style="height: 70px" />
+            <img src="../images/GigaShop-Logo.png" alt="Giga Shop" class="ml-5 my-1" style="height: 70px" />
             ADMINISTRATOR
           </a>
 

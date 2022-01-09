@@ -4,7 +4,7 @@
   <title>Administrator</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="../images/CompHub-Logo.png" type="image/png+xml" />
+  <link rel="shortcut icon" href="../images/GigaShop-Logo.png" type="image/png+xml" />
   <link rel="stylesheet" href="css/adminUser.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -33,8 +33,8 @@
     <div class="container-fluid p-0">
       <nav class="navbar navbar-expand-lg navbar-light">
           <a class="navbar-brand" href="#">
-              <img src="../images/CompHub-Logo.png" alt="CompHub" class="ml-5 my-1" style="height: 70px" />
-              ADMINISTRATOR
+            <img src="../images/GigaShop-Logo.png" alt="Giga Shop" class="ml-5 my-1" style="height: 70px" />
+            ADMINISTRATOR
           </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
           aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
