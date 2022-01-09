@@ -17,19 +17,30 @@ if(isset($_POST['update-item']))
     $price = $_POST['item-price'];
     $stock = $_POST['stock'];
 
-    $query = "UPDATE products SET product_category='$category', product_name='$product', image='$image', product_info='$info', price='$price', stocks='$stock'  WHERE id ='$id' ";
+    $query = "UPDATE products SET product_category='$category', product_name='$product', product_info='$info', price='$price', stocks='$stock'  WHERE id ='$id' ";
     $query_run = mysqli_query($mysqli, $query);
 
     if($query_run){
         if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
+            mysqli_query($mysqli, "UPDATE products SET image='$image' WHERE id ='$id' ");
+
             $msg ="Item uploaded successfully";
 
             $_SESSION['message'] = "Record has been updated!";
             $_SESSION['msg_type'] = "warning";
 
-         header("Location: adminProduct.php");
-        }
-        else{
+            header("Location: adminProduct.php");
+        } else if (file_exists($image) === false) {
+            // insert code for set image as is
+            
+    
+            $msg ="Item uploaded successfully without image";
+
+            $_SESSION['message'] = "Record has been updated without image!";
+            $_SESSION['msg_type'] = "warning";
+
+            header("Location: adminProduct.php");
+        } else {
             $msg = "Item not uploaded";
         }
     }
