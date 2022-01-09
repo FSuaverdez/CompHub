@@ -232,5 +232,6 @@ table.table .avatar {
   font-weight: normal;
 }
 .issue_container{
-  text-overflow:hidden;
+  text-overflow:scroll;
+  width: 20px;
 }

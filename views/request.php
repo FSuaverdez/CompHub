@@ -12,12 +12,7 @@ if(isset($_POST['submit_button'])){
     $status = "In Queue";
     $mysqli->query("INSERT INTO ticket (name, email, subject, issue, date_issued, status_update) VALUES('$name', '$email', '$subject', '$description', '$date', '$status') ")
           or die($mysqli->error);
-    if(mysqli_error($mysqli)){
-        echo mysqli_error($mysqli);
-    }
-    else{
-        echo "nothing went wrong";
-    }
+    
     echo "<script> alert('Request Made Successfully!'); </script>";
     if(isset($_POST["redirect"])){
         echo "<script> window.location = '../admin/adminTicket.php' </script>";

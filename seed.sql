@@ -85,8 +85,7 @@ INSERT INTO `purchase_history` (`id`, `products`, `qty`, `total`, `date_bought`,
 
 INSERT INTO `ticket` (`id`, `name`, `email`, `subject`, `issue`, `date_issued`, `date_resolved`, `status_update`) VALUES
 (1, 'Gerard', 'admin@example.com', 'tester', 'tqwrqwrwqqr', '2021-03-27 02:30:34', '2021-03-27 02:31:33', 'Resolved'),
-(2, 'Julius', 'julius@sample.com',  'Trial', 'This is a trial message', '2021-03-27 08:03:14', '2021-03-27 08:03:28', 'Resolved'),
-(3, 'Mark', 'mark@sample.com',  'Amber', 'Give me C6 amber', '2021-03-27 08:04:56', '2021-03-27 08:05:33', 'Resolved'),
-(4, 'Client test', 'client@sample.com',  'Hardware malfunction/issue', 'There has been a hardware issue that i cannot turn on the computer.', '2021-03-27 08:28:05', '2021-03-27 08:31:23', 'Resolved'),
+(2, 'Julius', 'julius@sample.com', 'Trial', 'This is a trial message', '2021-03-27 08:03:14', '2021-03-27 08:03:28', 'Resolved'),
+(3, 'Mark', 'mark@sample.com', 'Amber', 'Give me C6 amber', '2021-03-27 08:04:56', '2021-03-27 08:05:33', 'Resolved'),
 (5, 'Frannz', 'Test', 'test', 'test', '2021-12-16 09:10:42', NULL, 'In Queue'),
-(6, 'Frannz ', 'frannz@test.com', '123123', 'jfjksdhfjksdjhfjkasdhfjsjkdhfjksdhjkfjksd', '2021-12-18 01:37:40', NULL, 'In Queue');
+(7, 'none', 'none@email.com', 'i dont know ', 'There has been a hardware issue that i cannot turn on the computer.', '2022-01-09 07:30:56', NULL, 'In Queue');

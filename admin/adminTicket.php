@@ -71,18 +71,18 @@
             <h2>Manage <b>Tickets</b></h2>
           </div>
           <div class="col-sm-6">
-            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><i class="material-icons">&#xE147;</i> <span>Add Ticket</span></a>
+            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><span><i class="fa fa-plus" aria-hidden="true"></i>Add Ticket</span></a>
           </div>
         </div>
       </div>
-      <table class="table table-striped table-hover">
+      <table class="table table-hover table-striped">
         <thead>
           <tr>
             <th>ID</th>
             <th>Customer Name</th>
             <th>Email</th>
             <th>Subject</th>
-            <th>Issue</th>
+            <th>Description</th>
             <th>Date Created</th>
             <th>Date Resolved</th>
             <th>Status</th>
@@ -99,9 +99,9 @@
          <td><?php echo $row['email']; ?></td>
          <td><?php echo $row['subject']; ?></td>
          <td>
-            <div class="issue_container">
+          <div class="issue-container">
               <?php echo $row['issue']; ?>
-            </div>
+          </div>
         </td>
          <td><?php echo $row['date_issued']; ?></td>
          <td><?php echo $row['date_resolved']; ?></td>   
