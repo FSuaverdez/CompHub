@@ -65,13 +65,13 @@ if (isset($_POST['item-insert'])) {
                     <div class="collapse navbar-collapse my-2 py-2" id="collapsibleNavbar">
                         <ul class="navbar-nav ml-lg-auto">
                             <li class="nav-item">
+                                <a class="nav-link disabled" href="adminUser.php">Accounts<span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="adminProduct.php">Product</a>
                             </li>
                             <li class="nav-item active">
                                 <a class="nav-link" href="adminStatus.php">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="adminTicket.php" id="accounts">Tickets<span class="sr-only">(current)</span></a>
                             </li>
                             <li>
                                 <button class="btn btn-dark" data-toggle="modal" data-target=".bs-example-modal-sm">Logout</button>
@@ -151,13 +151,20 @@ if (isset($_POST['item-insert'])) {
                     <div class="modal-body">
                         <div class="form-group">
                             <label>Category</label>
-                            <input type="text" name="item-category" class="form-control" required>
+                            <select name="item-category">
+                                <option value="Computers">Computers</option>
+                                <option value="Monitors">Monitors</option>
+                                <option value="Audio">Audio</option>
+                                <option value="Storage">Storage</option>
+                                <option value="Peripherals">Peripherals</option>
+                                <option value="Others">Others</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Product</label>
                             <input type="text" name="item-name" class="form-control" required>
                         </div>
-                        <div>
+                        <div class="form-group">
                             <input type="file" name="image">
                         </div>
                         <div class="form-group">
@@ -172,10 +179,6 @@ if (isset($_POST['item-insert'])) {
                             <label>Price</label>
                             <input type="number" name="item-price" class="form-control" required>
                         </div>
-
-
-
-
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -198,29 +201,35 @@ if (isset($_POST['item-insert'])) {
                         <input type="hidden" name="update_id" id="update_id">
                         <div class="form-group">
                             <label>Category</label>
-                            <input type="text" class="form-control" id="item-category" name="item-category" required>
+                            <select name="item-category" value="item-category">
+                                <option value="Computers">Computers</option>
+                                <option value="Monitors">Monitors</option>
+                                <option value="Audio">Audio</option>
+                                <option value="Storage">Storage</option>
+                                <option value="Peripherals">Peripherals</option>
+                                <option value="Others">Others</option>
+                            </select>
                         </div>
                         <div class="form-group">
                             <label>Product</label>
-                            <input type="text" class="form-control" id="item-product" name="item-product" required>
+                            <input type="text" class="form-control" id="item-product" name="item-product" value="item-product" required>
                         </div>
                         <div class="form-group">
                             <label>Product Image</label>
-                            <input type="file" id="image" name="image" required>
+                            <input type="file" id="image" name="image" value="image" required>
                         </div>
                         <div class="form-group">
                             <label>Product Description</label>
-                            <input type="text" class="form-control" id="item-info" name="item-info" required>
+                            <input type="text" class="form-control" id="item-info" name="item-info" value="item-info" required>
                         </div>
                         <div class="form-group">
                             <label>Stocks</label>
-                            <input type="number" class="form-control" id="stock" name="stock" required>
+                            <input type="number" class="form-control" id="stock" name="stock" value="stock" required>
                         </div>
                         <div class="form-group">
                             <label>Price</label>
                             <input type="number" class="form-control" id="item-price" name="item-price" required>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <input type="button" class="btn btn-default" data-dismiss="modal" value="Cancel">
@@ -316,16 +325,17 @@ if (isset($_POST['item-insert'])) {
 
                 var data = $tr.children("td").map(function() {
                     return $(this).text();
+                    
                 }).get();
 
                 console.log(data);
                 $('#update_id').val(data[0]);
                 $('#item-category').val(data[1]);
                 $('#item-product').val(data[2]);
-                $('#image').val(data[3]);
+                // $('#image').val(data[3]);
                 $('#item-info').val(data[4]);
-                $('#item-date').val(data[5]);
-                $('#stock').val(data[6]);
+                $('#stock').val(parseInt(data[5]));
+                $('#item-price').val(parseInt(data[6]));
 
 
             });
