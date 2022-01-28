@@ -65,61 +65,59 @@
     </div>
   </header>
 
-  <div class="container">
-    <div class="table-wrapper">
-      <div class="table-title">
-        <div class="row">
-          <div class="col-sm-6">
-            <h2>Manage <b>Tickets</b></h2>
-          </div>
-          <div class="col-sm-6">
-            <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><span><i class="fa fa-plus" aria-hidden="true"></i>Add Ticket</span></a>
-          </div>
+  <div class="table-container">
+    <div class="table-title">
+      <div class="row">
+        <div class="col-sm-6">
+          <h2>Manage <b>Tickets</b></h2>
+        </div>
+        <div class="col-sm-6">
+          <a href="#addEmployeeModal" class="btn btn-success" data-toggle="modal"><span><i class="fa fa-plus" aria-hidden="true"></i>Add Ticket</span></a>
         </div>
       </div>
-      <table class="table table-hover table-striped">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Customer Name</th>
-            <th>Email</th>
-            <th>Subject</th>
-            <th>Description</th>
-            <th>Date Created</th>
-            <th>Date Resolved</th>
-            <th>Status</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <?php
-
-          while ($row = $result->fetch_assoc()) : ?>
-            <tr>
-              <td><?php echo $row['id']; ?></td>
-              <td><?php echo $row['name']; ?></td>
-              <td><?php echo $row['email']; ?></td>
-              <td><?php echo $row['subject']; ?></td>
-              <td>
-                <div class="issue-container">
-                  <?php echo substr($row['issue'], 0, 20) ?>
-                </div>
-              </td>
-              <td><?php echo $row['date_issued']; ?></td>
-              <td><?php echo $row['date_resolved']; ?></td>
-              <td><?php echo $row["status_update"]; ?> </td>
-              <td>
-                <button type="button" class="btn btn-success editbtn" value="Edit">Edit</button>
-              </td>
-              <td>
-                <button type="button" class="btn btn-danger deletebtn" value="Delete">Delete</button>
-              </td>
-
-            </tr>
-          <?php endwhile; ?>
-        </tbody>
-      </table>
     </div>
+    <table class="table table-hover table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer Name</th>
+          <th>Email</th>
+          <th>Subject</th>
+          <th>Description</th>
+          <th>Date Created</th>
+          <th>Date Resolved</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <?php
+
+        while ($row = $result->fetch_assoc()) : ?>
+          <tr>
+            <td><?php echo $row['id']; ?></td>
+            <td><?php echo $row['name']; ?></td>
+            <td><?php echo $row['email']; ?></td>
+            <td><?php echo $row['subject']; ?></td>
+            <td>
+              <div class="issue-container">
+                <?php echo $row['issue'] ?>
+              </div>
+            </td>
+            <td><?php echo $row['date_issued']; ?></td>
+            <td><?php echo $row['date_resolved']; ?></td>
+            <td><?php echo $row["status_update"]; ?> </td>
+            <td>
+              <button type="button" class="btn btn-success editbtn" value="Edit">Edit</button>
+            </td>
+            <td>
+              <button type="button" class="btn btn-danger deletebtn" value="Delete">Delete</button>
+            </td>
+
+          </tr>
+        <?php endwhile; ?>
+      </tbody>
+    </table>
   </div>
   <!-- ADD Modal HTML -->
   <div id="addEmployeeModal" class="modal fade">
@@ -290,7 +288,7 @@
         $('#u-user-name').val(data[1]);
         $('#u-user-email').val(data[2]);
         $('#u-user-issue').val(data[3]);
-        $('#u-user-description').val(data[4]);
+        $('#u-user-description').val(data[4].trim());
         $("#u-user-date_created").val(data[5]);
         $("#u-user-date_resolved").val(data[6]);
         $("#u-user_status option[value=" + data[7] + "]").attr("selected", "selected");
