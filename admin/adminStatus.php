@@ -16,6 +16,9 @@
 
 <body>
   <?php require 'queuestatus.php' ?>
+
+
+
   <?php
   $mysqli = new mysqli('localhost', 'root', '', 'request') or die(mysqli_error($mysqli));
   $result = $mysqli->query("SELECT * FROM purchase_history") or die($mysqli->error);
@@ -61,6 +64,9 @@
           <div class="col-sm-6">
             <h2>Services Status</h2>
           </div>
+          <form method="POST" action="printReport.php" class="col-sm-6">
+            <button class="btn btn-primary" type="submit" name="download_service_report">Download Report</button>
+          </form>
         </div>
       </div>
 
@@ -71,15 +77,21 @@
             <th>Paypal Transaction ID</th>
             <th>Products</th>
             <th>Qty</th>
-            <th>Total Cost</th>
-            <th>Profit</th>
+            <th>Cost</th>
+            <th>Total</th>
             <th>Date Bought</th>
           </tr>
         </thead>
         <tbody>
+
+
           <?php
           $total = 0;
-          while ($row = $result->fetch_assoc()) : ?>
+          $data = [];
+
+          while ($row = $result->fetch_assoc()) :
+            array_push($data, $row);
+          ?>
             <tr>
               <td><?php echo $row['id']; ?></td>
               <td><?php echo $row['transaction_id']; ?></td>
@@ -87,7 +99,7 @@
               <td><?php echo $row['qty']; ?></td>
               <td><?php echo $row['total']; ?></td>
               <?php
-              $total =  ($total) + $row['total'];
+              $total =  $row['qty'] * $row['total'];
               ?>
               <td><?php echo $total; ?></td>
               <td><?php echo $row['date_bought']; ?></td>
@@ -97,6 +109,7 @@
       </table>
     </div>
   </div>
+
 
   <!-- Resolve Modal HTML 
   <div id="resolve_ticket" class="modal fade">
