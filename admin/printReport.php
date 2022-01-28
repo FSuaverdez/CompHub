@@ -15,7 +15,7 @@ if (isset($_POST['download_service_report'])) {
   $pdf->Cell(40, 10, 'Sales Report');
   $pdf->Ln();
   // Colors, line width and bold font
-  $pdf->SetFillColor(255, 0, 0);
+  $pdf->SetFillColor(2, 48, 71);
   $pdf->SetTextColor(255);
   $pdf->SetDrawColor(128, 0, 0);
   $pdf->SetLineWidth(.3);
@@ -44,5 +44,5 @@ if (isset($_POST['download_service_report'])) {
   }
   // Closing line
   $pdf->Cell(array_sum($w), 0, '', 'T');
-  $pdf->Output();
+  $pdf->Output('i', 'sales_report');
 }
