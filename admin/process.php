@@ -1,6 +1,6 @@
 <?php 
+    require '../source/db_connect.php';
     
-    $mysqli = new mysqli('localhost', 'root', '','request') or die(mysqli_error($mysqli));
     $id = 0;
     $update = false;
     $modified_time = '';
@@ -10,11 +10,8 @@
         $email = $_POST['user-email'];
         $contact = $_POST['user-contact'];
 
-
-        $conn = mysqli_connect('localhost', 'root', '');
-        $db = mysqli_select_db($conn,'request');
-        $query = mysqli_query($conn,"SELECT * FROM users WHERE username = '$username'");
-        $querye = mysqli_query($conn,"SELECT * FROM users WHERE email = '$email'");
+        $query = mysqli_query($mysqli,"SELECT * FROM GGS_users WHERE username = '$username'");
+        $querye = mysqli_query($mysqli,"SELECT * FROM GGS_users WHERE email = '$email'");
         $rows = mysqli_num_rows($query);
         $rows2 = mysqli_num_rows($querye);
 
@@ -29,7 +26,7 @@
           }
 
           else{
-        $mysqli->query("INSERT INTO users (username, password, email, contact) VALUES('$username', '$password', '$email', '$contact')")
+        $mysqli->query("INSERT INTO GGS_users (username, password, email, contact) VALUES('$username', '$password', '$email', '$contact')")
         or die($mysqli->error);
     
         $_SESSION['message'] = "Record Created!";
@@ -40,7 +37,7 @@
 }
     if(isset($_GET['delete'])){
         $id = $_GET['delete'];
-        $mysqli->query("DELETE FROM users WHERE id = '$id'") or die(mysqli_error($mysqli));
+        $mysqli->query("DELETE FROM GGS_users WHERE id = '$id'") or die(mysqli_error($mysqli));
 
         $_SESSION['message'] = "Record has been deleted!";
         $_SESSION['msgtype'] = "danger";
@@ -51,7 +48,7 @@
     if(isset($_GET['Edit'])){
         $id = $_GET['Edit'];
         $update = true;
-        $result = $mysqli->query("SELECT * FROM users WHERE id = '$id'") or die($mysqli->error);
+        $result = $mysqli->query("SELECT * FROM GGS_users WHERE id = '$id'") or die($mysqli->error);
         $rows = mysqli_num_rows($result);
 
         if($rows > 0){

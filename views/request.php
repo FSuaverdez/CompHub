@@ -10,7 +10,7 @@ if(isset($_POST['submit_button'])){
     date_default_timezone_set("Asia/Manila");
     $date = date("Y-m-d h:i:sa");
     $status = "In Queue";
-    $mysqli->query("INSERT INTO ticket (name, email, subject, issue, date_issued, status_update) VALUES('$name', '$email', '$subject', '$description', '$date', '$status') ")
+    $mysqli->query("INSERT INTO GGS_ticket (name, email, subject, issue, date_issued, status_update) VALUES('$name', '$email', '$subject', '$description', '$date', '$status') ")
           or die($mysqli->error);
     
     echo "<script> alert('Request Made Successfully!'); </script>";

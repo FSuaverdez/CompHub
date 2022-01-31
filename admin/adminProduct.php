@@ -1,10 +1,7 @@
 <?php
+require '../source/db_connect.php';
 if (isset($_POST['item-insert'])) {
     $target = "images/" . basename($_FILES['image']['name']);
-
-    $mysqli = new mysqli('localhost', 'root', '', 'request') or die(mysqli_error($mysqli));
-    $conn = mysqli_connect('localhost', 'root', '');
-    $db = mysqli_select_db($conn, 'request');
 
     $category = $_POST['item-category'];
     $product = $_POST['item-name'];
@@ -13,7 +10,7 @@ if (isset($_POST['item-insert'])) {
     $price = $_POST['item-price'];
     $stock = $_POST['item-stock'];
 
-    $mysqli->query("INSERT into products (product_name,product_category,image,product_info,stocks,price) VALUES ('$product','$category','$image','$info','$stock','$price')")
+    $mysqli->query("INSERT into GGS_products (product_name,product_category,image,product_info,stocks,price) VALUES ('$product','$category','$image','$info','$stock','$price')")
         or die($mysqli->error);
 
     if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
@@ -44,9 +41,7 @@ if (isset($_POST['item-insert'])) {
 <body>
 
     <?php
-    $mysqli = new mysqli('localhost', 'root', '', 'request') or die(mysqli_error($mysqli));
-    $result = $mysqli->query("SELECT * FROM products") or die($mysqli->error);
-
+    $result = $mysqli->query("SELECT * FROM GGS_products") or die($mysqli->error);
     ?>
 
     <header class="container-fluid" style="margin-bottom: 125px">

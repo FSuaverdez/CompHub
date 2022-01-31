@@ -7,10 +7,7 @@ if (isset($_POST['login-btn'])) {
 	$user = $_POST['username'];
 	$password = $_POST['pass'];
 
-
-	$conn = mysqli_connect('localhost', 'root', '');
-	$db = mysqli_select_db($conn, 'request');
-	$query = mysqli_query($conn, "SELECT * FROM admin WHERE password ='$password' AND username = '$user'");
+	$query = mysqli_query($mysqli, "SELECT * FROM GGS_admin WHERE password ='$password' AND username = '$user'");
 	$rows = mysqli_num_rows($query);
 
 	if ($rows == 1) {
@@ -19,7 +16,7 @@ if (isset($_POST['login-btn'])) {
 	} else {
 		echo "<script> alert('Invalid Username or Password!'); window.location = 'index.php' </script>";
 	}
-	mysqli_close($conn);
+	mysqli_close($mysqli);
 }
 
 ?>

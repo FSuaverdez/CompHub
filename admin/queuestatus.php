@@ -1,7 +1,5 @@
 <?php
-    $mysqli = new mysqli('localhost', 'root', '') or die(mysqli_error($mysqli));
-    $db = mysqli_select_db($mysqli, 'request');
-
+    require '../source/db_connect.php';
     if(isset($_POST['Queue'])){ 
         $id = $_POST['queue_id'];
         $modstat = "Resolved";
@@ -9,7 +7,7 @@
         $date = date("Y-m-d h:i:sa");
         
    
-    $query = "UPDATE ticket SET  status_update = '$modstat', date_resolved ='$date' WHERE id ='$id'";
+    $query = "UPDATE GGS_ticket SET  status_update = '$modstat', date_resolved ='$date' WHERE id ='$id'";
     $query_run = mysqli_query($mysqli, $query);
 
     if($query_run){

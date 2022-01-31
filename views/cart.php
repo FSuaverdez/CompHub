@@ -12,8 +12,8 @@ include('navbar.php');
 <?php
 $totalAmount = 0;
 $qty = 0;
+require '../source/db_connect.php';
 
-$connect = mysqli_connect("localhost", "root", "", "request");
 
 if (isset($_POST["add_to_cart"])) {
     if (isset($_SESSION["shopping_cart"])) {

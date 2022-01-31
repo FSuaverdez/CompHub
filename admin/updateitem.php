@@ -1,14 +1,9 @@
 <?php 
 
-$mysqli = new mysqli('localhost', 'root', '','request') or die(mysqli_error($mysqli));
-$conn = mysqli_connect('localhost', 'root', '');
+require '../source/db_connect.php';
 if(isset($_POST['update-item']))
 {
     $target = "images/" .basename($_FILES['image']['name']);
-
-   
-    $db = mysqli_select_db($conn,'request');
-
     $id = $_POST['update_id'];
     $category = $_POST['item-category'];
     $product = $_POST['item-product'];
@@ -17,12 +12,12 @@ if(isset($_POST['update-item']))
     $price = $_POST['item-price'];
     $stock = $_POST['stock'];
 
-    $query = "UPDATE products SET product_category='$category', product_name='$product', product_info='$info', price='$price', stocks='$stock'  WHERE id ='$id' ";
+    $query = "UPDATE GGS_products SET product_category='$category', product_name='$product', product_info='$info', price='$price', stocks='$stock'  WHERE id ='$id' ";
     $query_run = mysqli_query($mysqli, $query);
 
     if($query_run){
         if(move_uploaded_file($_FILES['image']['tmp_name'], $target)){
-            mysqli_query($mysqli, "UPDATE products SET image='$image' WHERE id ='$id' ");
+            mysqli_query($mysqli, "UPDATE GGS_products SET image='$image' WHERE id ='$id' ");
 
             $msg ="Item uploaded successfully";
 

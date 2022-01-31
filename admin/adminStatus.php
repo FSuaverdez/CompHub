@@ -20,8 +20,8 @@
 
 
   <?php
-  $mysqli = new mysqli('localhost', 'root', '', 'request') or die(mysqli_error($mysqli));
-  $result = $mysqli->query("SELECT * FROM purchase_history") or die($mysqli->error);
+  require '../source/db_connect.php';
+  $result = $mysqli->query("SELECT * FROM GGS_purchase_history") or die($mysqli->error);
   ?>
 
   <header class="container-fluid" style="margin-bottom: 125px">

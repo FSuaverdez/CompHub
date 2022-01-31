@@ -2,8 +2,8 @@
 include('header.php');
 include('navbar.php');
 
-$mysqli = new mysqli('localhost', 'root', '', 'request') or die(mysqli_error($mysqli));
-$result = $mysqli->query("SELECT * FROM products") or die($mysqli->error);
+require '../source/db_connect.php';
+$result = $mysqli->query("SELECT * FROM GGS_products") or die($mysqli->error);
 
 if (isset($_POST['valueToSearch'])) {
     $search = $_POST['valueToSearch'];
@@ -60,7 +60,7 @@ if (isset($_POST['valueToSearch'])) {
             <!-- Shop Computers Content -->
             <div class="tab-pane fade" id="shopComputer" role="tabpanel" aria-labelledby="shopComputer-tab">
                 <?php 
-                    $result2 = $mysqli->query("SELECT * FROM products WHERE product_category = 'Computers'") or die($mysqli->error);
+                    $result2 = $mysqli->query("SELECT * FROM GGS_products WHERE product_category = 'Computers'") or die($mysqli->error);
                 ?>
                 <div class="container-fluid d-flex justify-content-center">
                     <div class="row mx-5 px-2">
@@ -94,7 +94,7 @@ if (isset($_POST['valueToSearch'])) {
             <!-- Shop Monitors Content -->
             <div class="tab-pane fade" id="shopMonitor" role="tabpanel" aria-labelledby="shopMonitor-tab">
                 <?php 
-                    $result3 = $mysqli->query("SELECT * FROM products WHERE product_category = 'Monitors'") or die($mysqli->error);
+                    $result3 = $mysqli->query("SELECT * FROM GGS_products WHERE product_category = 'Monitors'") or die($mysqli->error);
                 ?>
                 <div class="container-fluid d-flex justify-content-center">
                     <div class="row mx-5 px-2">
@@ -128,7 +128,7 @@ if (isset($_POST['valueToSearch'])) {
             <!-- Shop Audio Content -->
             <div class="tab-pane fade" id="shopComputer" role="tabpanel" aria-labelledby="shopComputer-tab">
                 <?php 
-                    $result4 = $mysqli->query("SELECT * FROM products WHERE product_category = 'Audio'") or die($mysqli->error);
+                    $result4 = $mysqli->query("SELECT * FROM GGS_products WHERE product_category = 'Audio'") or die($mysqli->error);
                 ?>
                 <div class="container-fluid d-flex justify-content-center">
                     <div class="row mx-5 px-2">
@@ -162,7 +162,7 @@ if (isset($_POST['valueToSearch'])) {
             <!-- Shop Storage Content -->
             <div class="tab-pane fade" id="shopStorage" role="tabpanel" aria-labelledby="shopStorage-tab">
                 <?php 
-                    $result5 = $mysqli->query("SELECT * FROM products WHERE product_category = 'Storage'") or die($mysqli->error);
+                    $result5 = $mysqli->query("SELECT * FROM GGS_products WHERE product_category = 'Storage'") or die($mysqli->error);
                 ?>
                 <div class="container-fluid d-flex justify-content-center">
                     <div class="row mx-5 px-2">
@@ -196,7 +196,7 @@ if (isset($_POST['valueToSearch'])) {
             <!-- Shop Peripherals Content -->
             <div class="tab-pane fade" id="shopPeripherals" role="tabpanel" aria-labelledby="shopPeripherals-tab">
                 <?php 
-                    $result6 = $mysqli->query("SELECT * FROM products WHERE product_category = 'Peripherals'") or die($mysqli->error);
+                    $result6 = $mysqli->query("SELECT * FROM GGS_products WHERE product_category = 'Peripherals'") or die($mysqli->error);
                 ?>
                 <div class="container-fluid d-flex justify-content-center">
                     <div class="row mx-5 px-2">
@@ -230,7 +230,7 @@ if (isset($_POST['valueToSearch'])) {
             <!-- Shop Others Content -->
             <div class="tab-pane fade" id="shopOthers" role="tabpanel" aria-labelledby="shopOthers-tab">
                 <?php 
-                    $result7 = $mysqli->query("SELECT * FROM products WHERE product_category = 'Others'") or die($mysqli->error);
+                    $result7 = $mysqli->query("SELECT * FROM GGS_products WHERE product_category = 'Others'") or die($mysqli->error);
                 ?>
                 <div class="container-fluid d-flex justify-content-center">
                     <div class="row mx-5 px-2">

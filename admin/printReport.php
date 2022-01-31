@@ -1,7 +1,7 @@
 <?php
+require '../source/db_connect.php';
 if (isset($_POST['download_service_report'])) {
-  $mysqli = new mysqli('localhost', 'root', '', 'request') or die(mysqli_error($mysqli));
-  $result = $mysqli->query("SELECT * FROM purchase_history") or die($mysqli->error);
+  $result = $mysqli->query("SELECT * FROM GGS_purchase_history") or die($mysqli->error);
   $data = [];
   while ($row = $result->fetch_assoc()) :
     array_push($data, $row);

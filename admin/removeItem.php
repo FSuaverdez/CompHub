@@ -1,13 +1,12 @@
 <?php
-
-    $conn = mysqli_connect("localhost", "root","");
-    $db = mysqli_select_db($conn,'request');
+    require '../source/db_connect.php';
+    $db = mysqli_select_db($mysqli,'request');
 
     if(isset($_POST['delete-item'])){
         $id = $_POST['delete_id'];
         
-        $query = "DELETE from products WHERE id = '$id'";
-        $run = mysqli_query($conn,$query);
+        $query = "DELETE from GGS_products WHERE id = '$id'";
+        $run = mysqli_query($mysqli,$query);
 
         if($run){
             header("location: adminProduct.php");

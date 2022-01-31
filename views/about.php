@@ -1,9 +1,9 @@
 <?php
     include('header.php');
     include('navbar.php');
-
-    $mysqli = new mysqli('localhost', 'root', '','request') or die(mysqli_error($mysqli));
-    $result = $mysqli->query("SELECT * FROM products") or die($mysqli->error);
+    require '../source/db_connect.php';
+   
+    $result = $mysqli->query("SELECT * FROM GGS_products") or die($mysqli->error);
 ?>
 <main class="general-container">
     <section class="container-fluid about-holder mx-auto" style="margin-top: 7.5rem">

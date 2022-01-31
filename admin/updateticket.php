@@ -18,7 +18,7 @@
         }
 
         
-        $query = "UPDATE ticket SET 
+        $query = "UPDATE GGS_ticket SET 
          name ='$customerName',
          email ='$email', 
          subject = '$issue',

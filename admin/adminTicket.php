@@ -28,7 +28,7 @@
   <?php endif ?>
   <?php
   require "../source/db_connect.php";
-  $result = $mysqli->query("SELECT * FROM ticket") or die($mysqli->error);
+  $result = $mysqli->query("SELECT * FROM GGS_ticket") or die($mysqli->error);
 
   ?>
   <header class="container-fluid" style="margin-bottom: 125px">
@@ -107,10 +107,9 @@
             <td><?php echo $row['date_issued']; ?></td>
             <td><?php echo $row['date_resolved']; ?></td>
             <td><?php echo $row["status_update"]; ?> </td>
+           
             <td>
-              <button type="button" class="btn btn-success editbtn" value="Edit">Edit</button>
-            </td>
-            <td>
+            <button type="button" class="btn btn-success editbtn" value="Edit">Edit</button>
               <button type="button" class="btn btn-danger deletebtn" value="Delete">Delete</button>
             </td>
 
