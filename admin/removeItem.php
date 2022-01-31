@@ -1,8 +1,7 @@
 <?php
     require '../source/db_connect.php';
-    $db = mysqli_select_db($mysqli,'request');
 
-    if(isset($_POST['delete-item'])){
+    if(isset($_POST['delete_id'])){
         $id = $_POST['delete_id'];
         
         $query = "DELETE from GGS_products WHERE id = '$id'";

@@ -17,7 +17,7 @@ if (isset($_POST['hidden_product'])) {
 
 
   date_default_timezone_set("Asia/Manila");
-  $date = date("Y-m-d h:i:s a");
+  $date = date("Y-m-d h:i:s");
 
   $mysqli->query("INSERT into GGS_purchase_history (products,total,date_bought,transaction_id,qty) VALUES ('$saved_prod','$saved_total','$date','$transaction_id','$qty')")
     or die($mysqli->error);

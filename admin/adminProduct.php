@@ -239,7 +239,7 @@ if (isset($_POST['item-insert'])) {
     <div id="deleteEmployeeModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form action="removeitem.php" method="POST">
+                <form action="removeItem.php" method="POST">
                     <div class="modal-header">
                         <h4 class="modal-title">Delete Product?</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>

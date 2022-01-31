@@ -8,7 +8,7 @@ if(isset($_POST['submit_button'])){
     $subject = $_POST['issueSubject'];
     $description = $_POST['desc'];
     date_default_timezone_set("Asia/Manila");
-    $date = date("Y-m-d h:i:sa");
+    $date = date("Y-m-d h:i:s");
     $status = "In Queue";
     $mysqli->query("INSERT INTO GGS_ticket (name, email, subject, issue, date_issued, status_update) VALUES('$name', '$email', '$subject', '$description', '$date', '$status') ")
           or die($mysqli->error);

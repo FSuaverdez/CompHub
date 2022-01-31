@@ -12,7 +12,7 @@
         $date_created = $_POST["user-date_created"];
         $status = $_POST["user_status"];
         if($status=="Resolved"){
-            $date_resolved = date("Y-m-d h:i:sa");
+            $date_resolved = date("Y-m-d h:i:s");
         }else{
             $date_resolved = NULL; 
         }
