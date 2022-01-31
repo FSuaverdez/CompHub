@@ -1,7 +1,8 @@
 <?php
     $mysqli = new mysqli("localhost", "root", ""); 
+    $mysqli->query("DROP DATABASE IF EXISTS request;");
     if(empty(mysqli_fetch_array(mysqli_query($mysqli, "SHOW DATABASES LIKE 'request'")))){
-        $mysqli->query("DROP DATABASE IF EXISTS request;");
+       
         $mysqli->query("CREATE DATABASE IF NOT EXISTS request; ");
         $mysqli = new mysqli("localhost", "root", "", 'request') or die(mysqli_error($mysqli));
         $lines = file("../seed.sql"); 
